@@ -1,0 +1,26 @@
+--- origsrc/buzztard-0.4.0/docs/reference/bt-ic/buzztard-ic.types	2008-11-26 13:15:18.000000000 -0600
++++ src/buzztard-0.4.0/docs/reference/bt-ic/buzztard-ic.types	2009-03-01 21:24:39.921875000 -0600
+@@ -2,7 +2,6 @@
+ 
+ btic_control_get_type
+ btic_device_get_type
+-btic_input_device_get_type
+ btic_learn_get_type
+ btic_midi_device_get_type
+ btic_registry_get_type
+--- origsrc/buzztard-0.4.0/src/lib/ic/input-device.c	2008-08-11 11:59:42.000000000 -0500
++++ src/buzztard-0.4.0/src/lib/ic/input-device.c	2009-03-01 19:44:23.390625000 -0600
+@@ -34,6 +34,8 @@
+  * This is lowlevel
+  * http://libhid.alioth.debian.org/
+  */
++#ifdef __linux__
++
+ #define BTIC_CORE
+ #define BTIC_INPUT_DEVICE_C
+ 
+@@ -515,3 +517,4 @@ GType btic_input_device_get_type(void) {
+   }
+   return type;
+ }
++#endif /* __linux__ */

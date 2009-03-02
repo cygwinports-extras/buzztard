@@ -1,0 +1,10 @@
+--- origsrc/buzztard-0.4.0/src/ui/edit/playback-controller-socket.c	2008-09-29 15:24:40.000000000 -0500
++++ src/buzztard-0.4.0/src/ui/edit/playback-controller-socket.c	2009-03-01 19:51:02.078125000 -0600
+@@ -35,6 +35,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ 
+ enum {
+   SETTINGS_DIALOG_APP=1,

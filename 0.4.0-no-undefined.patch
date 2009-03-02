@@ -1,0 +1,22 @@
+--- origsrc/buzztard-0.4.0/src/lib/core/Makefile.am	2008-11-20 12:14:44.000000000 -0600
++++ src/buzztard-0.4.0/src/lib/core/Makefile.am	2009-03-01 18:54:31.250000000 -0600
+@@ -19,7 +19,7 @@ BUILT_SOURCES = marshal.h marshal.c
+ lib_LTLIBRARIES = libbuzztard-core.la
+ libbuzztard_core_la_LIBADD = $(BASE_DEPS_LIBS) $(BT_LIBS) -lgstaudio-0.10 \
+ 	$(top_builddir)/src/lib/ic/libbuzztard-ic.la
+-libbuzztard_core_la_LDFLAGS = -version-info @BT_VERSION_INFO@
++libbuzztard_core_la_LDFLAGS = -version-info @BT_VERSION_INFO@ -no-undefined
+ libbuzztard_core_la_SOURCES = \
+ 	core.c libbuzztard-core/core.h \
+ 	tools.c libbuzztard-core/tools.h \
+--- origsrc/buzztard-0.4.0/src/lib/ic/Makefile.am	2008-11-20 12:14:44.000000000 -0600
++++ src/buzztard-0.4.0/src/lib/ic/Makefile.am	2009-03-01 18:54:58.187500000 -0600
+@@ -4,7 +4,7 @@ SUBDIRS = . libbuzztard-ic
+ 
+ lib_LTLIBRARIES = libbuzztard-ic.la
+ libbuzztard_ic_la_LIBADD = $(BASE_DEPS_LIBS) $(BT_LIBS)
+-libbuzztard_ic_la_LDFLAGS = -version-info @BT_VERSION_INFO@
++libbuzztard_ic_la_LDFLAGS = -version-info @BT_VERSION_INFO@ -no-undefined
+ libbuzztard_ic_la_SOURCES = \
+ 	ic.c libbuzztard-ic/ic.h \
+ 	libbuzztard-ic/version.h \
